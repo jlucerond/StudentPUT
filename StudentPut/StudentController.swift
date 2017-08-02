@@ -1,5 +1,5 @@
 //
-//  ModelController.swift
+//  StudentController.swift
 //  StudentPut
 //
 //  Created by Joe Lucero on 8/2/17.
@@ -46,5 +46,24 @@ class StudentController {
         task.resume()
     }
     
-    
+    // Post Students
+    static func putStudentWith(name: String, completion: @escaping (_ success: Bool) -> Void) {
+        guard let url = baseURL?.appendingPathComponent(UUID().uuidString).appendingPathExtension("json") else { return }
+        
+        let student = Student(name: name)
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.httpBody = student.jsonRepresentation
+        
+        let dataTask = URLSession.shared.dataTask(with: request){ (data, _, error) in
+            
+            if let error = error { NSLog(error.localizedDescription); completion(false) ; return }
+            
+            else { students.append(student) ; completion(true) }
+            
+        }
+        
+        dataTask.resume()
+    }
 }

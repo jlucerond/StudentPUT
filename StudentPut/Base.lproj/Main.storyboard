@@ -52,8 +52,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Students" id="RaC-Gw-QQh">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dhb-gb-AAK"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dhb-gb-AAK">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="Myc-DA-3gu" id="ffc-WI-uSV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="7yL-mE-CTT" id="BHD-2f-qzQ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vI-AV-TA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
