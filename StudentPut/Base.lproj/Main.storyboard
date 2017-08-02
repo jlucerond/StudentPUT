@@ -6,20 +6,39 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Students-->
         <scene sceneID="uub-Cg-89E">
             <objects>
-                <tableViewController id="Myc-DA-3gu" sceneMemberID="viewController">
+                <tableViewController id="Myc-DA-3gu" customClass="StudentsTableViewController" customModule="StudentPut" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6fi-qF-MKp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Hrm-Ku-oYg">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7yL-mE-CTT">
+                                    <rect key="frame" x="16" y="7" width="343" height="30"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="7yL-mE-CTT" firstAttribute="leading" secondItem="Hrm-Ku-oYg" secondAttribute="leadingMargin" constant="8" id="5Ey-qd-TBa"/>
+                                <constraint firstItem="7yL-mE-CTT" firstAttribute="centerY" secondItem="Hrm-Ku-oYg" secondAttribute="centerY" id="TLu-gH-jjW"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="7yL-mE-CTT" secondAttribute="trailing" constant="8" id="s9F-sq-BX4"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gfz-2A-0Cw">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentCell" id="gfz-2A-0Cw">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gfz-2A-0Cw" id="8Gi-uI-dEH">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -32,7 +51,9 @@
                             <outlet property="delegate" destination="Myc-DA-3gu" id="pnZ-TL-MvN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="RaC-Gw-QQh"/>
+                    <navigationItem key="navigationItem" title="Students" id="RaC-Gw-QQh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dhb-gb-AAK"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vI-AV-TA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
